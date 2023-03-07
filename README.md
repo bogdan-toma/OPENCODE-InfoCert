@@ -1,4 +1,5 @@
 
+
 ## OpenCode InfoCert integration API
 
 ------------------------------------------------------------------------------------------
@@ -27,7 +28,7 @@
 > | partnerRef      |  required | String   | Partner's unique internal ID of request  |
 
 ###### Example
-```javascript
+```json
 {
 "cui":  "32332105",
 "cuiReg":  "J40/12446/2013",
@@ -54,7 +55,7 @@
 > | requestId      |   String   | Internal request ID  |
 
 ###### Example
-```javascript
+```json
 {
 "requestId":  "jrurF1FhZ7nuyYAdy6Xm"
 }
@@ -84,7 +85,7 @@
 > | requestId      |  required | String   | Internal request ID  |
 
 ###### Example
-```javascript
+```json
 {
 "requestId":  "jrurF1FhZ7nuyYAdy6Xm"
 }
@@ -109,7 +110,7 @@
 > | docUri      |   String   | Direct download URI for generated document (present only if generated)  |
 
 ###### Example
-```javascript
+```json
 {
 "partnerRef":  "d5f3af8e",
 "requestStatus":  "Finalised",
@@ -120,3 +121,92 @@
 </details>
 
 ------------------------------------------------------------------------------------------
+#### Value Lists
+<details>
+ <summary>documentType</summary>
+ 
+ ```javascript
+ "Furnizare informatii"
+ "Certificat constatator de bază"
+ "Certificat constatator fonduri IMM"
+ "Certificat constatator pentru insolvență"
+ ```
+</details>
+
+<details>
+ <summary>documentScope</summary>
+ 
+ <blockquote>
+ 
+ <details>
+	 <summary>documentType = <code>"Furnizare informatii"</code></summary>
+  <blockquote>
+  <code>"Informare"</code>
+	</details>
+ <details>
+	 <summary>documentType = <code>"Certificat constatator de bază"</code></summary>
+  <blockquote>
+  <code>"Informare"
+"Accesare Fonduri"
+"Accesare Fonduri Europene"
+"Administratia financiara"
+"Administraţia Fondului pentru Mediu"
+"Administrația Finanțelor Publice"
+"Agenţia pentru Finanţarea Investiţiilor Rurale (AFIR)"
+"Agenția de Plăți și Intervenții în Agricultură"
+"Agenția Națională de Administrare Fiscală"
+"Agenția Națională pentru Ocuparea Forței de Muncă"
+"Agenția Națională pentru Protecția Mediului"
+"Agenția Națională pentru Resurse Minerale"
+"Ambasadă"
+"Atestare ANRE"
+"Autoritatea Rutieră Română"
+"Autorizare"
+"Banca Națională a României"
+"Bancă"
+"Birou notar public"
+"Casa Națională de Asigurări de Sănătate"
+"Casa Națională de Pensii"
+"Direcţia Generală a Vămilor"
+"Eliberare cazier judiciar"
+"Fonduri SAPARD"
+"Insolvență"
+"Inspectoratul General pentru Imigrări"
+"Instanță"
+"Leasing"
+"Licitație"
+"Ministerul Economiei, Energiei și Mediului de Afaceri"
+"Ministerul Muncii și Justiţiei Sociale"
+"Obținere viză"
+"Oficiul de Cadastru și Publicitate Imobiliară"
+"Parchet"
+"Poliție"
+"Primãrie"
+"PSIPAN"
+"Registrul Auto Român"
+"Registrul Operatorilor Intracomunitari"
+"Înregistrare în scopuri de TVA"</code>
+	</details>
+ <details>
+	 <summary>documentType = <code>"Certificat constatator fonduri IMM"</code></summary>
+  <blockquote>
+  <code>"Accesare Fonduri"
+"Accesare Fonduri Europene"
+"Agenţia pentru Finanţarea Investiţiilor Rurale (AFIR)"
+"Agenția de Plăți și Intervenții în Agricultură"
+"Fonduri IMM"
+"Fonduri SAPARD"
+"MINIMIS"
+"Ministerul Economiei, Energiei și Mediului de Afaceri"
+"Ministerul Muncii și Justiţiei Sociale"
+"Primãrie"</code>
+	</details>
+ <details>
+	 <summary>documentType = <code>"Certificat constatator pentru insolvență"</code></summary>
+  <blockquote>
+<code>"Birou notar public"
+"Licitație"
+"Procedura de insolventa"
+"Tribunal"</code>
+	</details>
+</details>
