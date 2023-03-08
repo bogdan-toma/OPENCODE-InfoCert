@@ -106,7 +106,7 @@
 > | name        |   data type  | description                                       |
 > |-------------|--------------|---------------------------------------------------|
 > | partnerRef      |   String   | Partner's unique internal ID of request  |
-> | requestStatus      |   String   | Internal request ID  |
+> | requestStatus      |   String   | Request Status  |
 > | docUri      |   String   | Direct download URI for generated document (present only if generated)  |
 
 ###### Example
@@ -209,4 +209,19 @@
 "Procedura de insolventa"
 "Tribunal"</code>
 	</details>
+</details>
+<details>
+ <summary>requestStatus</summary>
+ 
+> | Option   |  Description                                                           |
+> |----------|----------------------------------------------------------------|
+> | Created      | Request received and loaded to backend systems  |
+> | SendingToONRC      | RPA in progress to create ONRC request - first try |
+> | RetrySendToONRC | Subsequent RPA tries to create ONRC request |
+> | SentToONRC | Request is sent to ONRC and waiting for document |
+> | DownloadONRC | First check if document is generated |
+> | RetryDownloadONRC | Subsequent checks for document generation |
+> | DoneONRC | Document is generated and available |
+> | Finalised | Request is finalised |
+
 </details>
