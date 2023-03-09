@@ -34,7 +34,7 @@
 "cuiReg":  "J40/12446/2013",
 "documentType":  "Furnizare informatii",
 "documentScope":  "Informare",
-"priority":  "High"
+"priority":  "High",
 "partnerRef":  "d5f3af8e"
 }
 ```
