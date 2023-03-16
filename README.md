@@ -7,7 +7,13 @@
 #### Create a new request
 
 <details>
- <summary><code>POST</code> <code><b>/api/partners/submitRequest</b></code> <code>(creates a new request)</code></summary>
+ <summary><code>POST</code> <code><b>{uri}/api/partners/submitRequest</b></code> <code>(creates a new request)</code></summary>
+
+##### Endpoint
+
+> | Key      | Value               | description                                                           |
+> |-----------|-------------------------|-----------------------------------------------------------------------|
+> | uri      | String  | Provided by OpenCode (STAGING / PROD)  |
 
 ##### Headers
 
@@ -28,15 +34,19 @@
 > | partnerRef      |  required | String   | Partner's unique internal ID of request  |
 
 ###### Example
-```json
-{
-"cui":  "32332105",
-"cuiReg":  "J40/12446/2013",
-"documentType":  "Furnizare informatii",
-"documentScope":  "Informare",
-"priority":  "High",
-"partnerRef":  "d5f3af8e"
-}
+```bash
+curl -L 'https://$uri/api/partners/submitRequest' \
+-u '$user:$password' \
+-H 'X-OCD-Partner: $partnerId' \
+-H 'Content-Type: application/json' \
+-d '{
+    "cui":  "32332105",
+    "cuiReg":  "J40/12446/2013",
+    "documentType":  "Furnizare informatii",
+    "documentScope":  "Informare",
+    "priority":  "High",
+    "partnerRef":  "d5f3af8e"
+}'
 ```
 
 ##### Responses
@@ -68,7 +78,13 @@
 #### Query Request Status
 
 <details>
- <summary><code>POST</code> <code><b>/api/partners/queryRequestStatus</b></code> <code>(query request status)</code></summary>
+ <summary><code>POST</code> <code><b>{uri}/api/partners/queryRequestStatus</b></code> <code>(query request status)</code></summary>
+
+##### Endpoint
+
+> | Key      | Value               | description                                                           |
+> |-----------|-------------------------|-----------------------------------------------------------------------|
+> | uri      | String  | Provided by OpenCode (STAGING / PROD)  |
 
 
 ##### Headers
@@ -85,10 +101,14 @@
 > | requestId      |  required | String   | Internal request ID  |
 
 ###### Example
-```json
-{
-"requestId":  "jrurF1FhZ7nuyYAdy6Xm"
-}
+```bash
+curl -L 'https://$uri/api/partners/queryRequestStatus' \
+-u '$user:$password' \
+-H 'X-OCD-Partner: $partnerId' \
+-H 'Content-Type: application/json' \
+-d '{
+    "requestId": "jrurF1FhZ7nuyYAdy6Xm"
+}'
 ```
 
 ##### Responses
