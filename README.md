@@ -128,13 +128,15 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 > | partnerRef      |   String   | Partner's unique internal ID of request  |
 > | requestStatus      |   String   | Request Status  |
 > | docUri      |   String   | Direct download URI for generated document (present only if generated)  |
+> | onrcInvoiceUri | String | Direct download URI for ONRC invoice (only for partners with self-invoice |
 
 ###### Example
 ```json
 {
 "partnerRef":  "d5f3af8e",
 "requestStatus":  "Finalised",
-"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
+"onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
 }
 ```
 
@@ -242,6 +244,7 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 > | DownloadONRC | First check if document is generated |
 > | RetryDownloadONRC | Subsequent checks for document generation |
 > | DoneONRC | Document is generated and available |
+> | InvoiceGeneratedONRC | ONRC invoice is generated and available |
 > | Finalised | Request is finalised |
 
 </details>
