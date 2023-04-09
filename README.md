@@ -201,7 +201,7 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 {
 "partnerRef":  "d5f3af8e",
 "requestStatus":  "Finalised",
-"onrcPortalNo": 856012,
+"onrcPortalNo": "856012",
 "docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
 "onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
 }
