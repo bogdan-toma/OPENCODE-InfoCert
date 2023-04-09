@@ -75,6 +75,71 @@ curl -L 'https://$uri/api/partners/submitRequest' \
 
 ------------------------------------------------------------------------------------------
 
+#### Cancel request
+
+<details>
+ <summary><code>POST</code> <code><b>{uri}/api/partners/cancelRequest</b></code> <code>(cancels a request - only from Created or RetrySendToONRC)</code></summary>
+
+##### Endpoint
+
+> | Key      | Value               | description                                                           |
+> |-----------|-------------------------|-----------------------------------------------------------------------|
+> | uri      | String  | Provided by OpenCode (STAGING / PROD)  |
+
+##### Headers
+
+> | Key      | Value               | description                                                           |
+> |-----------|-------------------------|-----------------------------------------------------------------------|
+> | Authorization      | Basic Auth   | Provided by OpenCode  |
+> | X-OCD-Partner      | String   | Provided by OpenCode  |
+
+##### Body
+
+> | name      |  type     | data type               | description                                                           |
+> |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
+> | requestId      |  required | String   | Internal request ID  |
+
+###### Example
+```bash
+curl -L 'https://$uri/api/partners/cancelRequest' \
+-u '$user:$password' \
+-H 'X-OCD-Partner: $partnerId' \
+-H 'Content-Type: application/json' \
+-d '{
+    "requestId": "jrurF1FhZ7nuyYAdy6Xm"
+}'
+```
+
+##### Responses
+
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `200`         | `application/json`        | object (JSON)    |
+> | `400`         | `text/html;charset=utf-8` | None   |
+> | `401`         | `text/html;charset=utf-8`         | None  |
+> | `404`         | `text/html;charset=utf-8`         | None  |
+> | `409`         | `text/html;charset=utf-8`         | None  |
+
+
+##### Response Body
+
+> | name      |   data type               | description                   |
+> |-----------|-----------|-------------------------|
+> | requestId      |   String   | Internal request ID  |
+> | requestStatus      |   String   | Request Status - Cancelled  |
+
+###### Example
+```json
+{
+"requestId":  "jrurF1FhZ7nuyYAdy6Xm",
+"requestStatus": "Cancelled"
+}
+```
+
+</details>
+
+------------------------------------------------------------------------------------------
+
 #### Query Request Status
 
 <details>
@@ -127,6 +192,7 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 > |-------------|--------------|---------------------------------------------------|
 > | partnerRef      |   String   | Partner's unique internal ID of request  |
 > | requestStatus      |   String   | Request Status  |
+> | onrcPortalNo | String | ONRC Portal Number |
 > | docUri      |   String   | Direct download URI for generated document (present only if generated)  |
 > | onrcInvoiceUri | String | Direct download URI for ONRC invoice (only for partners with self-invoice |
 
@@ -135,6 +201,7 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 {
 "partnerRef":  "d5f3af8e",
 "requestStatus":  "Finalised",
+"onrcPortalNo": 856012,
 "docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
 "onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
 }
@@ -238,11 +305,12 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 > | Option   |  Description                                                           |
 > |----------|----------------------------------------------------------------|
 > | Created      | Request received and loaded to backend systems  |
-> | SendingToONRC      | RPA in progress to create ONRC request - first try |
-> | RetrySendToONRC | Subsequent RPA tries to create ONRC request |
+> | Cancelled | Request cancelled by partner |
+> | SendingToONRC      | In progress - RPA create ONRC request |
+> | RetrySendToONRC | Postponed - RPA create ONRC request |
 > | SentToONRC | Request is sent to ONRC and waiting for document |
-> | DownloadONRC | First check if document is generated |
-> | RetryDownloadONRC | Subsequent checks for document generation |
+> | DownloadONRC | In progress - check ONRC for document generation |
+> | RetryDownloadONRC | Postponed - check ONRC for document generation |
 > | DoneONRC | Document is generated and available |
 > | InvoiceGeneratedONRC | ONRC invoice is generated and available |
 > | Finalised | Request is finalised |
