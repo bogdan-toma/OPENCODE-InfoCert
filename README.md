@@ -27,7 +27,6 @@
 > | name      |  type     | data type               | description                                                           |
 > |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
 > | cui      |  required | String   | Company identifier (without "RO")  |
-> | cuiReg      |  required | String   | Company registration number  |
 > | documentType      |  required | String   | From value list  |
 > | documentScope      |  required | String   | From value list  |
 > | priority      |  required | String   | Low / High  |
@@ -41,7 +40,6 @@ curl -L 'https://$uri/api/partners/submitRequest' \
 -H 'Content-Type: application/json' \
 -d '{
     "cui":  "32332105",
-    "cuiReg":  "J40/12446/2013",
     "documentType":  "Furnizare informatii",
     "documentScope":  "Informare",
     "priority":  "High",
