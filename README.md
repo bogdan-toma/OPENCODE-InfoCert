@@ -42,7 +42,7 @@ curl -L 'https://$uri/api/partners/submitRequest' \
     "cui":  "32332105",
     "documentType":  "Furnizare informatii",
     "documentScope":  "Informare",
-    "priority":  "High",
+    "priority":  "Low",
     "partnerRef":  "d5f3af8e"
 }'
 ```
