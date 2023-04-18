@@ -1,6 +1,6 @@
 
 
-## OpenCode InfoCert integration API
+## InfoCert (ONRC) integration API - by OpenCode S.R.L.
 
 ------------------------------------------------------------------------------------------
 
