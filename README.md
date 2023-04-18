@@ -138,7 +138,7 @@ curl -L 'https://$uri/api/partners/cancelRequest' \
 
 ------------------------------------------------------------------------------------------
 
-#### Query Request Status
+#### Query request status
 
 <details>
  <summary><code>POST</code> <code><b>{uri}/api/partners/queryRequestStatus</b></code> <code>(query request status)</code></summary>
@@ -202,6 +202,58 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 "onrcPortalNo": "856012",
 "docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
 "onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+}
+```
+
+</details>
+
+------------------------------------------------------------------------------------------
+
+#### Query ONRC status
+
+<details>
+ <summary><code>POST</code> <code><b>{uri}/api/partners/queryOnrcStatus</b></code> <code>(query ONRC status)</code></summary>
+
+##### Endpoint
+
+> | Key      | Value               | description                                                           |
+> |-----------|-------------------------|-----------------------------------------------------------------------|
+> | uri      | String  | Provided by OpenCode (STAGING / PROD)  |
+
+
+##### Headers
+
+> | Key      | Value               | description                                                           |
+> |----------|---------------------|-----------------------------------------------------------------------|
+> | Authorization      | Basic Auth   | Provided by OpenCode  |
+> | X-OCD-Partner      | String   | Provided by OpenCode  |
+
+
+###### Example
+```bash
+curl -L 'https://$uri/api/partners/queryOnrcStatus' \
+-u '$user:$password' \
+-H 'X-OCD-Partner: $partnerId' 
+```
+
+##### Responses
+
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `200`         | `application/json`        | object (JSON)    |
+> | `401`         | `text/html;charset=utf-8`         | None  |
+
+
+##### Response Body
+
+> | name        |   data type  | description                                       |
+> |-------------|--------------|---------------------------------------------------|
+> | isInfoCertActive      |   String   | "true" / "false" string values  |
+
+###### Example
+```json
+{
+"isInfoCertActive": "true"
 }
 ```
 
