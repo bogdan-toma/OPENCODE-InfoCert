@@ -356,8 +356,8 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
 > |----------|----------------------------------------------------------------|
 > | Created      | Request received and loaded to backend systems  |
 > | Cancelled | Request cancelled by partner |
-> | SendingToONRC      | In progress - RPA create ONRC request |
-> | RetrySendToONRC | Postponed - RPA create ONRC request |
+> | SendingToONRC      | In progress - API create ONRC request |
+> | RetrySendToONRC | Postponed - API create ONRC request |
 > | SentToONRC | Request is sent to ONRC and waiting for document |
 > | DownloadONRC | In progress - check ONRC for document generation |
 > | RetryDownloadONRC | Postponed - check ONRC for document generation |
