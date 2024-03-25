@@ -265,10 +265,11 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <summary>documentType</summary>
  
  ```javascript
- "Furnizare informatii"
  "Certificat constatator de bază"
  "Certificat constatator fonduri IMM"
  "Certificat constatator pentru insolvență"
+ "InfoRBR - Situatie la zi"
+ "InfoRBR - Raport istoric"
  ```
 </details>
 
@@ -277,11 +278,6 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  
  <blockquote>
  
- <details>
-	 <summary>documentType = <code>"Furnizare informatii"</code></summary>
-  <blockquote>
-  <code>"Informare"</code>
-	</details>
  <details>
 	 <summary>documentType = <code>"Certificat constatator de bază"</code></summary>
   <blockquote>
@@ -348,7 +344,18 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
 "Procedura de insolventa"
 "Tribunal"</code>
 	</details>
+<details>
+	<summary>documentType = <code>"InfoRBR - Situatie la zi"</code></summary>
+  <blockquote>
+  <code>"Informare"</code>
 </details>
+<details>
+	<summary>documentType = <code>"InfoRBR - Raport istoric"</code></summary>
+  <blockquote>
+  <code>"Informare"</code>
+</details>
+</details>
+
 <details>
  <summary>requestStatus</summary>
  
