@@ -188,6 +188,7 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 
 > | name        |   data type  | description                                       |
 > |-------------|--------------|---------------------------------------------------|
+> | requestId      |   String   | Internal request ID  |
 > | partnerRef      |   String   | Partner's unique internal ID of request  |
 > | requestStatus      |   String   | Request Status  |
 > | onrcPortalNo | String | ONRC Portal Number |
@@ -197,6 +198,7 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 ###### Example
 ```json
 {
+"requestId": "jrurF1FhZ7nuyYAdy6Xm",
 "partnerRef":  "d5f3af8e",
 "requestStatus":  "Finalised",
 "onrcPortalNo": "856012",
