@@ -348,7 +348,7 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <blockquote>
  
  <details>
-	 <summary>documentType = <code>"Certificat constatator de bază"</code></summary>
+	 <summary>documentType = <code>"InfoCERT - Certificat constatator de bază"</code></summary>
   <blockquote>
   <code>"Informare"
 "Accesare Fonduri"
@@ -392,7 +392,7 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
 "Înregistrare în scopuri de TVA"</code>
 	</details>
  <details>
-	 <summary>documentType = <code>"Certificat constatator fonduri IMM"</code></summary>
+	 <summary>documentType = <code>"InfoCERT - Certificat constatator fonduri IMM"</code></summary>
   <blockquote>
   <code>"Accesare Fonduri"
 "Accesare Fonduri Europene"
@@ -406,7 +406,7 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
 "Primãrie"</code>
 	</details>
  <details>
-	 <summary>documentType = <code>"Certificat constatator pentru insolvență"</code></summary>
+	 <summary>documentType = <code>"InfoCERT - Certificat constatator pentru insolvență"</code></summary>
   <blockquote>
 <code>"Birou notar public"
 "Licitație"
