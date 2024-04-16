@@ -30,7 +30,7 @@
 > | documentType      |  required | String   | From value list (see bottom) |
 > | documentScope      |  required | String   | From value list (see bottom) |
 > | priority      |  required | String   | Low / High  |
-> | partnerRef      |  required | String   | Partner's unique internal ID of request  |
+> | partnerRef      |  required | String   | Partner's **unique internal ID** of request  |
 
 ###### Example
 ```bash
