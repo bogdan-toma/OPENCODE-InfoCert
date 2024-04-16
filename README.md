@@ -1,6 +1,6 @@
 
 
-## ONRC InfoCert integration API - by OpenCode S.R.L.
+## ONRC InfoCert integration API
 
 ------------------------------------------------------------------------------------------
 
@@ -27,8 +27,8 @@
 > | name      |  type     | data type               | description                                                           |
 > |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
 > | cui      |  required | String   | Company identifier (without "RO")  |
-> | documentType      |  required | String   | From value list  |
-> | documentScope      |  required | String   | From value list  |
+> | documentType      |  required | String   | From value list (see bottom) |
+> | documentScope      |  required | String   | From value list (see bottom) |
 > | priority      |  required | String   | Low / High  |
 > | partnerRef      |  required | String   | Partner's unique internal ID of request  |
 
@@ -40,10 +40,10 @@ curl -L 'https://$uri/api/partners/submitRequest' \
 -H 'Content-Type: application/json' \
 -d '{
     "cui":  "32332105",
-    "documentType":  "Furnizare informatii",
-    "documentScope":  "Informare",
+    "documentType":  "InfoCERT - Certificat constatator de bază",
+    "documentScope":  "Agenția Națională pentru Ocuparea Forței de Muncă",
     "priority":  "Low",
-    "partnerRef":  "d5f3af8e"
+    "partnerRef":  "12345"
 }'
 ```
 
@@ -138,10 +138,77 @@ curl -L 'https://$uri/api/partners/cancelRequest' \
 
 ------------------------------------------------------------------------------------------
 
-#### Query request status
+#### Webhook request status
 
 <details>
- <summary><code>POST</code> <code><b>{uri}/api/partners/queryRequestStatus</b></code> <code>(query request status)</code></summary>
+ <summary><code>POST</code> <code><b>{uri}</b></code> <code>(webhook update request status)</code></summary>
+
+##### Endpoint
+
+> | Key      | Value               | description                                                           |
+> |-----------|-------------------------|-----------------------------------------------------------------------|
+> | uri      | String  | Provided by Partner  |
+
+
+##### Headers
+
+> | Key      | Value               | description                                                           |
+> |----------|---------------------|-----------------------------------------------------------------------|
+> | Authorization      | Basic Auth or None   | Provided by Partner  |
+
+##### Body
+
+> | name      |  present on request status     | data type               | description                                                           |
+> |-----------|-----------|-------------------------|-----------------------------------------------------------------------|
+> | requestId      | all |   String   | Internal request ID  |
+> | partnerRef      | all |   String   | Partner's unique internal ID of request  |
+> | requestStatus      | all |   String   | Request Status  |
+> | onrcPortalNo | SentToONRC | String | ONRC Portal Number (ID) |
+> | docUri      | DoneONRC,Finalised|   String   | Direct download URI for generated document (present only if generated)  |
+> | onrcInvoiceUri | Finalised* | String | Direct download URI for ONRC invoice (only for partners with self-invoice) |
+
+###### Examples
+```json
+{
+"requestId": "jrurF1FhZ7nuyYAdy6Xm",
+"partnerRef":  "12345",
+"requestStatus":  "SentToONRC",
+"onrcPortalNo": "856012"
+}
+```
+```json
+{
+"requestId": "jrurF1FhZ7nuyYAdy6Xm",
+"partnerRef":  "12345",
+"requestStatus":  "DoneONRC",
+"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+}
+```
+```json
+{
+"requestId": "jrurF1FhZ7nuyYAdy6Xm",
+"partnerRef":  "d5f3af8e",
+"requestStatus":  "Finalised",
+"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
+"onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+}
+```
+
+##### Responses
+
+> | http code     | content-type                      | response                                                            |
+> |---------------|-----------------------------------|---------------------------------------------------------------------|
+> | `200`         | `application/json`        | Any    |
+
+
+</details>
+
+------------------------------------------------------------------------------------------
+
+#### Query request status *
+
+<details>
+ <summary><code>POST</code> <code><b>{uri}/api/partners/queryRequestStatus</b></code> <code>(query request status - as an async **alternative** to webhook implementation)</code></summary>
 
 ##### Endpoint
 
@@ -189,17 +256,17 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 > | name        |   data type  | description                                       |
 > |-------------|--------------|---------------------------------------------------|
 > | requestId      |   String   | Internal request ID  |
-> | partnerRef      |   String   | Partner's unique internal ID of request  |
+> | partnerRef      |   String   | Partner's **unique internal ID** of request  |
 > | requestStatus      |   String   | Request Status  |
 > | onrcPortalNo | String | ONRC Portal Number |
 > | docUri      |   String   | Direct download URI for generated document (present only if generated)  |
-> | onrcInvoiceUri | String | Direct download URI for ONRC invoice (only for partners with self-invoice |
+> | onrcInvoiceUri | String | Direct download URI for ONRC invoice (only for partners with self-invoice) |
 
 ###### Example
 ```json
 {
 "requestId": "jrurF1FhZ7nuyYAdy6Xm",
-"partnerRef":  "d5f3af8e",
+"partnerRef":  "12345",
 "requestStatus":  "Finalised",
 "onrcPortalNo": "856012",
 "docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
@@ -267,9 +334,9 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <summary>documentType</summary>
  
  ```javascript
- "Certificat constatator de bază"
- "Certificat constatator fonduri IMM"
- "Certificat constatator pentru insolvență"
+ "InfoCERT - Certificat constatator de bază"
+ "InfoCERT - Certificat constatator fonduri IMM"
+ "InfoCERT - Certificat constatator pentru insolvență"
  "InfoRBR - Situatie la zi"
  "InfoRBR - Raport istoric"
  ```
