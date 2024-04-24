@@ -181,7 +181,7 @@ curl -L 'https://$uri/api/partners/cancelRequest' \
 "requestId": "jrurF1FhZ7nuyYAdy6Xm",
 "partnerRef":  "12345",
 "requestStatus":  "DoneONRC",
-"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+"docUri":  "https://firebasestorage.googleapis.com/v0/b/certificatconstatator-dev.appspot.com/o/2022_7_25_certificat273627-10S0Q.pdf?alt=media&token=ee42cf9c-c185-4291-9537-8bb518533218"
 }
 ```
 ```json
@@ -189,8 +189,8 @@ curl -L 'https://$uri/api/partners/cancelRequest' \
 "requestId": "jrurF1FhZ7nuyYAdy6Xm",
 "partnerRef":  "d5f3af8e",
 "requestStatus":  "Finalised",
-"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
-"onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+"docUri":  "https://firebasestorage.googleapis.com/v0/b/certificatconstatator-dev.appspot.com/o/2022_7_25_certificat273627-10S0Q.pdf?alt=media&token=ee42cf9c-c185-4291-9537-8bb518533218",
+"onrcInvoiceUri":  "https://firebasestorage.googleapis.com/v0/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_1_1_factura465298-MZX87.pdf?alt=media&token=a72fd4a8-b62d-43ab-a2de-5d34d7a2a353"
 }
 ```
 
@@ -269,8 +269,8 @@ curl -L 'https://$uri/api/partners/queryRequestStatus' \
 "partnerRef":  "12345",
 "requestStatus":  "Finalised",
 "onrcPortalNo": "856012",
-"docUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media",
-"onrcInvoiceUri":  "https://storage.googleapis.com/download/storage/v1/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_3_6_certificat0000-0000Q.pdf?generation=1678138325733513&alt=media"
+"docUri":  "https://firebasestorage.googleapis.com/v0/b/certificatconstatator-dev.appspot.com/o/2022_7_25_certificat273627-10S0Q.pdf?alt=media&token=ee42cf9c-c185-4291-9537-8bb518533218",
+"onrcInvoiceUri":  "https://firebasestorage.googleapis.com/v0/b/certificatconstatator-dev.appspot.com/o/_data1_portal_ccfil_certificate_2023_1_1_factura465298-MZX87.pdf?alt=media&token=a72fd4a8-b62d-43ab-a2de-5d34d7a2a353"
 }
 ```
 
