@@ -1,6 +1,6 @@
 
 
-## ONRC InfoCert integration API
+## ONRC InfoCert/InfoRBR integration API
 
 ------------------------------------------------------------------------------------------
 
