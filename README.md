@@ -334,9 +334,7 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <summary>documentType</summary>
  
  ```javascript
- "InfoCERT - Certificat constatator de bază"
- "InfoCERT - Certificat constatator fonduri IMM"
- "InfoCERT - Certificat constatator pentru insolvență"
+ "InfoCERT - Certificat constatator"
  "InfoRBR - Situatie la zi"
  "InfoRBR - Raport istoric"
  ```
@@ -348,71 +346,21 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <blockquote>
  
  <details>
-	 <summary>documentType = <code>"InfoCERT - Certificat constatator de bază"</code></summary>
+	 <summary>documentType = <code>"InfoCERT - Certificat constatator"</code></summary>
   <blockquote>
   <code>"Informare"
-"Accesare Fonduri"
-"Accesare Fonduri Europene"
-"Administratia financiara"
-"Administraţia Fondului pentru Mediu"
-"Administrația Finanțelor Publice"
-"Agenţia pentru Finanţarea Investiţiilor Rurale (AFIR)"
-"Agenția de Plăți și Intervenții în Agricultură"
-"Agenția Națională de Administrare Fiscală"
-"Agenția Națională pentru Ocuparea Forței de Muncă"
-"Agenția Națională pentru Protecția Mediului"
-"Agenția Națională pentru Resurse Minerale"
-"Ambasadă"
-"Atestare ANRE"
-"Autoritatea Rutieră Română"
-"Autorizare"
-"Banca Națională a României"
 "Bancă"
 "Birou notar public"
 "Casa Națională de Asigurări de Sănătate"
-"Casa Națională de Pensii"
-"Direcţia Generală a Vămilor"
-"Eliberare cazier judiciar"
-"Fonduri SAPARD"
-"Insolvență"
-"Inspectoratul General pentru Imigrări"
-"Instanță"
+"Fonduri IMM"
 "Leasing"
 "Licitație"
-"Ministerul Economiei, Energiei și Mediului de Afaceri"
-"Ministerul Muncii și Justiţiei Sociale"
 "Obținere viză"
-"Oficiul de Cadastru și Publicitate Imobiliară"
-"Parchet"
-"Poliție"
-"Primãrie"
-"PSIPAN"
-"Registrul Auto Român"
-"Registrul Operatorilor Intracomunitari"
-"Înregistrare în scopuri de TVA"</code>
+"Procedura insolvenței"
+"Altele"</code>
 	</details>
- <details>
-	 <summary>documentType = <code>"InfoCERT - Certificat constatator fonduri IMM"</code></summary>
-  <blockquote>
-  <code>"Accesare Fonduri"
-"Accesare Fonduri Europene"
-"Agenţia pentru Finanţarea Investiţiilor Rurale (AFIR)"
-"Agenția de Plăți și Intervenții în Agricultură"
-"Fonduri IMM"
-"Fonduri SAPARD"
-"MINIMIS"
-"Ministerul Economiei, Energiei și Mediului de Afaceri"
-"Ministerul Muncii și Justiţiei Sociale"
-"Primãrie"</code>
-	</details>
- <details>
-	 <summary>documentType = <code>"InfoCERT - Certificat constatator pentru insolvență"</code></summary>
-  <blockquote>
-<code>"Birou notar public"
-"Licitație"
-"Procedura de insolventa"
-"Tribunal"</code>
-	</details>
+ 
+ 
 <details>
 	<summary>documentType = <code>"InfoRBR - Situatie la zi"</code></summary>
   <blockquote>
