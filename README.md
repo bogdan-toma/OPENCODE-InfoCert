@@ -334,9 +334,9 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <summary>documentType</summary>
  
  ```javascript
- "InfoCERT - Certificat constatator"
- "InfoRBR - Situatie la zi"
- "InfoRBR - Raport istoric"
+ "INFOCERT_CONSTATATOR_PJ"
+ "INFORBR_SITUATIE_LA_ZI"
+ "INFORBR_RAPORT_ISTORIC"
  ```
 </details>
 
@@ -346,28 +346,17 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  <blockquote>
  
  <details>
-	 <summary>documentType = <code>"InfoCERT - Certificat constatator"</code></summary>
+	 <summary>documentType = <code>"INFOCERT_CONSTATATOR_PJ"</code></summary>
   <blockquote>
-  <code>"Informare"
-"Bancă"
-"Birou notar public"
-"Casa Națională de Asigurări de Sănătate"
-"Fonduri IMM"
-"Leasing"
-"Licitație"
-"Obținere viză"
-"Procedura insolvenței"
-"Altele"</code>
+  <code>*orice valoare text*</code>
 	</details>
- 
- 
 <details>
-	<summary>documentType = <code>"InfoRBR - Situatie la zi"</code></summary>
+	<summary>documentType = <code>"INFORBR_SITUATIE_LA_ZI"</code></summary>
   <blockquote>
   <code>"Informare"</code>
 </details>
 <details>
-	<summary>documentType = <code>"InfoRBR - Raport istoric"</code></summary>
+	<summary>documentType = <code>"INFORBR_RAPORT_ISTORIC"</code></summary>
   <blockquote>
   <code>"Informare"</code>
 </details>
