@@ -349,20 +349,40 @@ curl -L 'https://$uri/api/partners/queryOnrcStatus' \
  
  <blockquote>
  
- <details>
-	 <summary>documentType = <code>"INFOCERT_CONSTATATOR_PJ"</code></summary>
-  <blockquote>
-  <code>*orice valoare text*</code>
-	</details>
 <details>
-	<summary>documentType = <code>"INFORBR_SITUATIE_LA_ZI"</code></summary>
-  <blockquote>
-  <code>"Informare"</code>
+	<summary>documentType = <code>"INFOCERT_CONSTATATOR_PJ"</code></summary>
+	<blockquote>
+	<code>*orice valoare text*</code>
 </details>
 <details>
-	<summary>documentType = <code>"INFORBR_RAPORT_ISTORIC"</code></summary>
-  <blockquote>
-  <code>"Informare"</code>
+	<summary>documentType = <code>"INFOCERT_CONSTATATOR_PF"</code></summary>
+	<blockquote>
+	<code>*orice valoare text*</code>
+</details>
+<details>
+	<summary>documentType = <code>"INFORBR_RAPORT_ISTORIC_PJ"</code></summary>
+	<blockquote>
+	<code>"Informare"</code>
+</details>
+<details>
+	<summary>documentType = <code>"INFORBR_SITUATIE_LA_ZI_PJ"</code></summary>
+	<blockquote>
+	<code>"Informare"</code>
+</details>
+<details>
+	<summary>documentType = <code>"INFORBR_RAPORT_ISTORIC_PJ"</code></summary>
+	<blockquote>
+	<code>"Informare"</code>
+</details>
+<details>
+	<summary>documentType = <code>"INFORBR_SITUATIE_LA_ZI_PF"</code></summary>
+	<blockquote>
+	<code>"Informare"</code>
+</details>
+<details>
+	<summary>documentType = <code>"INFORBR_RAPORT_ISTORIC_PF"</code></summary>
+	<blockquote>
+	<code>"Informare"</code>
 </details>
 </details>
 
